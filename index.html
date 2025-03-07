@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Vyapar Vendor Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">
+                <h2>E-Vyapar</h2>
+            </div>
+            <nav>
+                <ul>
+                    <li class="active" data-page="dashboard">
+                        <i class="fas fa-home"></i>
+                        <span>Dashboard</span>
+                    </li>
+                    <li data-page="products">
+                        <i class="fas fa-box"></i>
+                        <span>Products</span>
+                    </li>
+                    <li data-page="orders">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span>Orders</span>
+                    </li>
+                    <li data-page="inventory">
+                        <i class="fas fa-warehouse"></i>
+                        <span>Inventory</span>
+                    </li>
+                    <li data-page="marketplaces">
+                        <i class="fas fa-store"></i>
+                        <span>Marketplaces</span>
+                    </li>
+                    <li data-page="analytics">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>Analytics</span>
+                    </li>
+                    <li data-page="profile">
+                        <i class="fas fa-user"></i>
+                        <span>Profile</span>
+                    </li>
+                    <li data-page="settings">
+                        <i class="fas fa-cog"></i>
+                        <span>Settings</span>
+                    </li>
+                </ul>
+            </nav>
+            <div class="logout">
+                <button>
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Header -->
+            <header>
+                <div class="header-left">
+                    <h1>Dashboard</h1>
+                    <p>Welcome back, Vendor!</p>
+                </div>
+                <div class="header-right">
+                    <div class="notifications">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge">3</span>
+                    </div>
+                    <div class="profile">
+                        <span>Hi, Vendor</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Tab Contents -->
+            <div class="tab-content">
+                <!-- Dashboard Tab -->
+                <div class="content active" id="dashboard-page">
+                    <!-- Stats Cards -->
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-indian-rupee-sign"></i>
+                            </div>
+                            <div class="stat-details">
+                                <h3>Total Sales</h3>
+                                <p class="amount">₹45,675</p>
+                                <span class="trend positive">+12.5%</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-shopping-bag"></i>
+                            </div>
+                            <div class="stat-details">
+                                <h3>Total Orders</h3>
+                                <p class="amount">156</p>
+                                <span class="trend positive">+8.2%</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-box"></i>
+                            </div>
+                            <div class="stat-details">
+                                <h3>Products</h3>
+                                <p class="amount">48</p>
+                                <span class="trend negative">-2.1%</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="stat-details">
+                                <h3>Customers</h3>
+                                <p class="amount">1,204</p>
+                                <span class="trend positive">+5.3%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Orders -->
+                    <div class="section">
+                        <div class="section-header">
+                            <h2>Recent Orders</h2>
+                            <button class="view-all">View All</button>
+                        </div>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Order ID</th>
+                                        <th>Customer</th>
+                                        <th>Product</th>
+                                        <th>Amount</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>#ORD-001</td>
+                                        <td>John Doe</td>
+                                        <td>Handcrafted Leather Bag</td>
+                                        <td>₹1,899</td>
+                                        <td><span class="status processing">Processing</span></td>
+                                        <td>
+                                            <button class="btn-action">Details</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>#ORD-002</td>
+                                        <td>Jane Smith</td>
+                                        <td>Traditional Copper Cookware</td>
+                                        <td>₹2,499</td>
+                                        <td><span class="status delivered">Delivered</span></td>
+                                        <td>
+                                            <button class="btn-action">Details</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Marketplace Performance -->
+                    <div class="section">
+                        <div class="section-header">
+                            <h2>Marketplace Performance</h2>
+                            <button class="view-all" data-target="marketplaces">View Details</button>
+                        </div>
+                        <div class="marketplace-grid">
+                            <div class="marketplace-card">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/2560px-Amazon_logo.svg.png" alt="Amazon">
+                                <div class="marketplace-details">
+                                    <h3>Amazon</h3>
+                                    <p>₹25,450 <span class="trend positive">+15%</span></p>
+                                </div>
+                            </div>
+                            <div class="marketplace-card">
+                                <img src="https://ecommercephotographyindia.com/info/wp-content/uploads/2021/09/Flipkart-logo.png" alt="Flipkart">
+                                <div class="marketplace-details">
+                                    <h3>Flipkart</h3>
+                                    <p>₹18,225 <span class="trend positive">+8%</span></p>
+                                </div>
+                            </div>
+                            <div class="marketplace-card">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgE2tQxNc8vowkPu-h_J9-2szMGiy2x1anKg&s" alt="Meesho">
+                                <div class="marketplace-details">
+                                    <h3>Meesho</h3>
+                                    <p>₹12,000 <span class="trend negative">-3%</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Products Tab -->
+                <div class="content" id="products-page">
+                    <div class="section">
+                        <div class="section-header">
+                            <h2>Products Management</h2>
+                            <button class="btn-primary">Add New Product</button>
+                        </div>
+                        <div class="product-filters">
+                            <div class="search-box">
+                                <i class="fas fa-search"></i>
+                                <input type="text" placeholder="Search products...">
+                            </div>
+                            <div class="filter-options">
+                                <select>
+                                    <option value="">All Categories</option>
+                                    <option value="electronics">Electronics</option>
+                                    <option value="clothing">Clothing</option>
+                                    <option value="home">Home & Living</option>
+                                </select>
+                                <select>
+                                    <option value="">Stock Status</option>
+                                    <option value="in-stock">In Stock</option>
+                                    <option value="low-stock">Low Stock</option>
+                                    <option value="out-of-stock">Out of Stock</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="products-grid">
+                            <!-- Product cards will be dynamically added here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Orders Tab -->
+                <div class="content" id="orders-page">
+                    <div class="section">
+                        <div class="section-header">
+                            <h2>Orders Management</h2>
+                        </div>
+                        <div class="order-filters">
+                            <div class="search-box">
+                                <i class="fas fa-search"></i>
+                                <input type="text" placeholder="Search orders...">
+                            </div>
+                            <div class="filter-options">
+                                <select>
+                                    <option value="">All Status</option>
+                                    <option value="pending">Pending</option>
+                                    <option value="processing">Processing</option>
+                                    <option value="shipped">Shipped</option>
+                                    <option value="delivered">Delivered</option>
+                                    <option value="cancelled">Cancelled</option>
+                                </select>
+                                <input type="date" placeholder="From Date">
+                                <input type="date" placeholder="To Date">
+                            </div>
+                        </div>
+                        <div class="table-container">
+                            <table class="orders-table">
+                                <thead>
+                                    <tr>
+                                        <th>Order ID</th>
+                                        <th>Customer</th>
+                                        <th>Products</th>
+                                        <th>Total</th>
+                                        <th>Date</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Orders will be dynamically added here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Inventory Tab -->
+                <div class="content" id="inventory-page">
+                    <div class="section">
+                        <div class="section-header">
+                            <h2>Inventory Management</h2>
+                            <button class="btn-primary">Update Stock</button>
+                        </div>
+                        <div class="inventory-stats">
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-boxes"></i>
+                                </div>
+                                <div class="stat-details">
+                                    <h3>Total Items</h3>
+                                    <p class="amount">1,234</p>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon warning">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                </div>
+                                <div class="stat-details">
+                                    <h3>Low Stock Items</h3>
+                                    <p class="amount">12</p>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon danger">
+                                    <i class="fas fa-times-circle"></i>
+                                </div>
+                                <div class="stat-details">
+                                    <h3>Out of Stock</h3>
+                                    <p class="amount">5</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="inventory-filters">
+                            <div class="search-box">
+                                <i class="fas fa-search"></i>
+                                <input type="text" placeholder="Search inventory...">
+                            </div>
+                            <div class="filter-options">
+                                <select>
+                                    <option value="">Stock Status</option>
+                                    <option value="in-stock">In Stock</option>
+                                    <option value="low-stock">Low Stock</option>
+                                    <option value="out-of-stock">Out of Stock</option>
+                                </select>
+                                <select>
+                                    <option value="">Sort By</option>
+                                    <option value="name">Name</option>
+                                    <option value="stock">Stock Level</option>
+                                    <option value="value">Value</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="table-container">
+                            <table class="inventory-table">
+                                <thead>
+                                    <tr>
+                                        <th>SKU</th>
+                                        <th>Product</th>
+                                        <th>Category</th>
+                                        <th>Stock Level</th>
+                                        <th>Unit Price</th>
+                                        <th>Total Value</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Inventory items will be dynamically added here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Analytics Tab -->
+                <div class="content" id="analytics-page">
+                    <div class="analytics-header">
+                        <div class="date-range-picker">
+                            <button class="btn-secondary active">7 Days</button>
+                            <button class="btn-secondary">30 Days</button>
+                            <button class="btn-secondary">3 Months</button>
+                            <button class="btn-secondary">Custom</button>
+                        </div>
+                        <div class="analytics-summary">
+                            <div class="summary-card">
+                                <div class="summary-icon">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <div class="summary-details">
+                                    <h4>Total Revenue</h4>
+                                    <p class="amount">₹85,450</p>
+                                    <span class="trend positive">+15.2% vs last period</span>
+                                </div>
+                            </div>
+                            <div class="summary-card">
+                                <div class="summary-icon">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </div>
+                                <div class="summary-details">
+                                    <h4>Orders</h4>
+                                    <p class="amount">245</p>
+                                    <span class="trend positive">+8.5% vs last period</span>
+                                </div>
+                            </div>
+                            <div class="summary-card">
+                                <div class="summary-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div class="summary-details">
+                                    <h4>New Customers</h4>
+                                    <p class="amount">64</p>
+                                    <span class="trend positive">+12.3% vs last period</span>
+                                </div>
+                            </div>
+                            <div class="summary-card">
+                                <div class="summary-icon">
+                                    <i class="fas fa-exchange-alt"></i>
+                                </div>
+                                <div class="summary-details">
+                                    <h4>Conversion Rate</h4>
+                                    <p class="amount">3.2%</p>
+                                    <span class="trend negative">-0.8% vs last period</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="analytics-grid">
+                        <!-- Sales Trend Chart -->
+                        <div class="chart-container large">
+                            <div class="chart-header">
+                                <h3>Sales Trend</h3>
+                                <div class="chart-actions">
+                                    <button class="btn-secondary active">Revenue</button>
+                                    <button class="btn-secondary">Orders</button>
+                                    <select class="chart-interval">
+                                        <option>Daily</option>
+                                        <option>Weekly</option>
+                                        <option>Monthly</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <canvas id="salesChart"></canvas>
+                        </div>
+
+                        <!-- Top Products Chart -->
+                        <div class="chart-container">
+                            <div class="chart-header">
+                                <h3>Top Products</h3>
+                                <select class="chart-filter">
+                                    <option>By Revenue</option>
+                                    <option>By Units Sold</option>
+                                </select>
+                            </div>
+                            <canvas id="productsChart"></canvas>
+                            <div class="chart-legend">
+                                <div class="legend-item">
+                                    <span class="legend-color" style="background: #00f2ff"></span>
+                                    <span class="legend-label">Leather Bag</span>
+                                    <span class="legend-value">₹25,450</span>
+                                </div>
+                                <div class="legend-item">
+                                    <span class="legend-color" style="background: #b026ff"></span>
+                                    <span class="legend-label">Copper Cookware</span>
+                                    <span class="legend-value">₹18,225</span>
+                                </div>
+                                <div class="legend-item">
+                                    <span class="legend-color" style="background: #00ff88"></span>
+                                    <span class="legend-label">Handwoven Scarf</span>
+                                    <span class="legend-value">₹12,000</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Revenue by Marketplace -->
+                        <div class="chart-container">
+                            <div class="chart-header">
+                                <h3>Revenue by Marketplace</h3>
+                                <div class="chart-actions">
+                                    <button class="btn-icon" title="Download Report">
+                                        <i class="fas fa-download"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <canvas id="marketplaceChart"></canvas>
+                        </div>
+
+                        <!-- Customer Demographics -->
+                        <div class="chart-container">
+                            <div class="chart-header">
+                                <h3>Customer Demographics</h3>
+                                <div class="chart-actions">
+                                    <button class="btn-icon" title="View Details">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <canvas id="demographicsChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Performance Metrics -->
+                    <div class="metrics-section">
+                        <h3>Key Performance Metrics</h3>
+                        <div class="metrics-grid">
+                            <div class="metric-card">
+                                <div class="metric-header">
+                                    <h4>Average Order Value</h4>
+                                    <i class="fas fa-info-circle" title="Average value of orders in the selected period"></i>
+                                </div>
+                                <p class="metric-value">₹1,245</p>
+                                <div class="metric-trend positive">
+                                    <i class="fas fa-arrow-up"></i>
+                                    <span>12.5%</span>
+                                </div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-header">
+                                    <h4>Return Rate</h4>
+                                    <i class="fas fa-info-circle" title="Percentage of orders returned"></i>
+                                </div>
+                                <p class="metric-value">2.4%</p>
+                                <div class="metric-trend negative">
+                                    <i class="fas fa-arrow-down"></i>
+                                    <span>0.8%</span>
+                                </div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-header">
+                                    <h4>Customer Satisfaction</h4>
+                                    <i class="fas fa-info-circle" title="Average customer rating"></i>
+                                </div>
+                                <p class="metric-value">4.8/5.0</p>
+                                <div class="metric-trend positive">
+                                    <i class="fas fa-arrow-up"></i>
+                                    <span>0.2</span>
+                                </div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-header">
+                                    <h4>Repeat Purchase Rate</h4>
+                                    <i class="fas fa-info-circle" title="Percentage of customers making repeat purchases"></i>
+                                </div>
+                                <p class="metric-value">35.8%</p>
+                                <div class="metric-trend positive">
+                                    <i class="fas fa-arrow-up"></i>
+                                    <span>5.2%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Profile Tab -->
+                <div class="content" id="profile-page">
+                    <div class="section">
+                        <div class="section-header">
+                            <h2>Profile Settings</h2>
+                            <button class="btn-primary">Save Changes</button>
+                        </div>
+                        <div class="profile-grid">
+                            <div class="profile-info">
+                                <div class="profile-avatar">
+                                    <img height="50px" width="100px" src="https://community.adobe.com/t5/image/serverpage/image-id/145201iE0ECF5C6ECBD959E/image-size/large/is-moderation-mode/true?v=v2&px=999" alt="Profile">
+                                    <button class="btn-secondary">Change Photo</button>
+                                </div>
+                                <form class="profile-form">
+                                    <div class="form-group">
+                                        <label>Business Name</label>
+                                        <input type="text" value="My Store">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Email</label>
+                                        <input type="email" value="vendor@example.com">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Phone</label>
+                                        <input type="tel" value="+91 1234567890">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Address</label>
+                                        <textarea>123 Business Street, City, State, 123456</textarea>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="business-settings">
+                                <h3>Business Settings</h3>
+                                <form class="settings-form">
+                                    <div class="form-group">
+                                        <label>Business Category</label>
+                                        <select>
+                                            <option>Retail</option>
+                                            <option>Wholesale</option>
+                                            <option>Manufacturing</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Tax Information</label>
+                                        <input type="text" value="GST123456789">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Currency</label>
+                                        <select>
+                                            <option>INR (₹)</option>
+                                            <option>USD ($)</option>
+                                            <option>EUR (€)</option>
+                                        </select>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="license-section">
+                                <h3>Business License Verification</h3>
+                                <div class="license-upload">
+                                    <input type="file" id="license-upload" accept="image/*,.pdf">
+                                    <label for="license-upload">
+                                        <i class="fas fa-cloud-upload-alt"></i>
+                                        <p>Click to upload your business license</p>
+                                        <p class="text-small">Supported formats: JPG, PNG, PDF (Max size: 5MB)</p>
+                                    </label>
+                                </div>
+                                
+                                <div class="license-preview">
+                                    <!-- Preview will be shown here -->
+                                </div>
+
+                                <div class="verification-status">
+                                    <!-- Initially empty, will be updated when license is uploaded -->
+                                </div>
+
+                                <div class="verification-actions">
+                                    <button class="btn-primary" id="check-verification">Check Verification Status</button>
+                                    <button class="btn-secondary" onclick="document.getElementById('license-upload').click()">Upload New License</button>
+                                </div>
+
+                                <div class="verification-note">
+                                    <p><i class="fas fa-info-circle"></i> Your business license will be verified within 24-48 hours. Once verified, you'll be able to access all vendor features.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Settings Tab -->
+                <div class="content" id="settings-page">
+                    <div class="section">
+                        <div class="section-header">
+                            <h2>Account Settings</h2>
+                            <button class="btn-primary">Save Changes</button>
+                        </div>
+                        <div class="settings-grid">
+                            <div class="settings-section">
+                                <h3>Notifications</h3>
+                                <div class="settings-options">
+                                    <div class="setting-item">
+                                        <div class="setting-info">
+                                            <h4>Email Notifications</h4>
+                                            <p>Receive email updates about your orders</p>
+                                        </div>
+                                        <label class="switch">
+                                            <input type="checkbox" checked>
+                                            <span class="slider"></span>
+                                        </label>
+                                    </div>
+                                    <div class="setting-item">
+                                        <div class="setting-info">
+                                            <h4>Order Updates</h4>
+                                            <p>Get notified when order status changes</p>
+                                        </div>
+                                        <label class="switch">
+                                            <input type="checkbox" checked>
+                                            <span class="slider"></span>
+                                        </label>
+                                    </div>
+                                    <div class="setting-item">
+                                        <div class="setting-info">
+                                            <h4>Low Stock Alerts</h4>
+                                            <p>Notifications when products are running low</p>
+                                        </div>
+                                        <label class="switch">
+                                            <input type="checkbox" checked>
+                                            <span class="slider"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="settings-section">
+                                <h3>Security</h3>
+                                <div class="settings-options">
+                                    <div class="setting-item">
+                                        <div class="setting-info">
+                                            <h4>Two-Factor Authentication</h4>
+                                            <p>Add an extra layer of security</p>
+                                        </div>
+                                        <label class="switch">
+                                            <input type="checkbox">
+                                            <span class="slider"></span>
+                                        </label>
+                                    </div>
+                                    <button class="btn-secondary">Change Password</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Marketplaces Tab -->
+                <div class="content" id="marketplaces-page">
+                    <div class="section">
+                        <div class="section-header">
+                            <h2>Marketplace Management</h2>
+                        </div>
+                        <div class="marketplace-stats">
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-store"></i>
+                                </div>
+                                <div class="stat-details">
+                                    <h3>Total Revenue</h3>
+                                    <p class="amount">₹55,675</p>
+                                    <span class="trend positive">+8.5%</span>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </div>
+                                <div class="stat-details">
+                                    <h3>Total Orders</h3>
+                                    <p class="amount">245</p>
+                                    <span class="trend positive">+12.3%</span>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div class="stat-details">
+                                    <h3>Active Customers</h3>
+                                    <p class="amount">890</p>
+                                    <span class="trend positive">+5.7%</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="marketplace-details-grid">
+                            <!-- Amazon Details -->
+                            <div class="marketplace-detail-card">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/2560px-Amazon_logo.svg.png" alt="Amazon">
+                                <div class="marketplace-stats">
+                                    <div class="stat">
+                                        <h4>Revenue</h4>
+                                        <p>₹25,450</p>
+                                        <span class="trend positive">+15%</span>
+                                    </div>
+                                    <div class="stat">
+                                        <h4>Orders</h4>
+                                        <p>125</p>
+                                        <span class="trend positive">+10%</span>
+                                    </div>
+                                    <div class="stat">
+                                        <h4>Products</h4>
+                                        <p>48</p>
+                                    </div>
+                                </div>
+                                <button class="btn-primary">Manage Products</button>
+                            </div>
+
+                            <!-- Flipkart Details -->
+                            <div class="marketplace-detail-card">
+                                <img src="https://ecommercephotographyindia.com/info/wp-content/uploads/2021/09/Flipkart-logo.png" alt="Flipkart">
+                                <div class="marketplace-stats">
+                                    <div class="stat">
+                                        <h4>Revenue</h4>
+                                        <p>₹18,225</p>
+                                        <span class="trend positive">+8%</span>
+                                    </div>
+                                    <div class="stat">
+                                        <h4>Orders</h4>
+                                        <p>85</p>
+                                        <span class="trend positive">+5%</span>
+                                    </div>
+                                    <div class="stat">
+                                        <h4>Products</h4>
+                                        <p>36</p>
+                                    </div>
+                                </div>
+                                <button class="btn-primary">Manage Products</button>
+                            </div>
+
+                            <!-- Meesho Details -->
+                            <div class="marketplace-detail-card">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgE2tQxNc8vowkPu-h_J9-2szMGiy2x1anKg&s" alt="Meesho">
+                                <div class="marketplace-stats">
+                                    <div class="stat">
+                                        <h4>Revenue</h4>
+                                        <p>₹12,000</p>
+                                        <span class="trend negative">-3%</span>
+                                    </div>
+                                    <div class="stat">
+                                        <h4>Orders</h4>
+                                        <p>35</p>
+                                        <span class="trend negative">-2%</span>
+                                    </div>
+                                    <div class="stat">
+                                        <h4>Products</h4>
+                                        <p>24</p>
+                                    </div>
+                                </div>
+                                <button class="btn-primary">Manage Products</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <div class="modal" id="addProductModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add New Product</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="addProductForm">
+                    <div class="form-group">
+                        <label>Product Name</label>
+                        <input type="text" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Category</label>
+                        <select required>
+                            <option value="">Select Category</option>
+                            <option value="electronics">Electronics</option>
+                            <option value="clothing">Clothing</option>
+                            <option value="home">Home & Living</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Price</label>
+                        <input type="number" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Stock Quantity</label>
+                        <input type="number" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Description</label>
+                        <textarea required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Product Images</label>
+                        <input type="file" multiple accept="image/*">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" data-dismiss="modal">Cancel</button>
+                <button class="btn-primary" form="addProductForm">Add Product</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+
+    <!-- Notification Container -->
+    <div class="notification-container"></div>
+</body>
+</html> 
